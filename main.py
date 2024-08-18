@@ -70,7 +70,7 @@ def main(params):
     nyuv2_test_set = NYUv2(root=params.dataset_path, mode='test', augmentation=False,task=params.task)
     labeled_dataset = NYUv2(root=params.dataset_path, mode='labeled', augmentation=True, pld=params.pld,task=params.task)
     unlabeled_dataset = NYUv2(root=params.dataset_path, mode='unlabeled', augmentation=False, pld=params.pld,task=params.task)
-    print(len(labeled_dataset), len(unlabeled_dataset))
+
     labeled_loader = torch.utils.data.DataLoader(labeled_dataset, batch_size=params.train_bs, shuffle=True)
     unlabeled_loader = torch.utils.data.DataLoader(unlabeled_dataset, batch_size=16, shuffle=False)
     
